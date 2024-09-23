@@ -183,10 +183,10 @@ a {
     -webkit-box-shadow: none;
     box-shadow: none; }
   .btn.btn-primary {
-    background: #44546E;
-    border-color: #44546E; }
+    background: #345944;
+    border-color: #345944; }
     .btn.btn-primary:hover {
-      background: #FCFFFD;
+      background: #34594455;
       border-color: #FCFFFD; }
   .btn.btn-secondary {
     color: #345944;

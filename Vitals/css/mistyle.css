@@ -7,3 +7,20 @@
 .letras{ 
     color: #dcf2ac;
 }
+.card-img-top {
+    border-radius: 50px;
+    padding: 20px;
+}
+.card {
+    border-radius: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.card-body {
+    padding: 25px;
+    margin-top: -15px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
