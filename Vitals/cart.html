@@ -11,8 +11,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
+
+
 
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap4" />
@@ -24,7 +24,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/mistyle.css">
     <title>Vitalis - Carrito de Compras</title>
-   
+
 </head>
 
 <body>
@@ -50,8 +50,16 @@
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+                    <li style="position: relative;">
+                        <a class="nav-link" href="cart.html">
+                            <img src="images/cart.svg" alt="Cart" id="cart-icon">
+                            <span id="cart-count" class="badge" style="display: none;">0</span>
+                        </a>
+                    </li>
                 </ul>
+
+
+
             </div>
         </div>
     </nav>
@@ -71,8 +79,12 @@
             <tbody id="cart-items"></tbody>
         </table>
         <h3 id="total-price">Total: $0</h3>
+        <button class="btn " onclick="clearCart()">Nueva Compra</button>
     </div>
- <h2>Le solicitamos realizar el pago mediante Sinpe Móvil (8466.8077) y enviar el comprobante al mismo número para iniciar con el trámite de entrega del pedido. </h2>
+    
+    <h2>Le solicitamos realizar el pago mediante Sinpe Móvil (8466.8077) y enviar el comprobante al mismo número para
+        iniciar con el trámite de entrega del pedido. </h2>
+
     <!-- Start Footer Section -->
     <footer class="container-fluid colorprincipal d-flex flex-column align-items-center mt-auto">
         <p>Contáctanos</p>
@@ -83,6 +95,8 @@
         </div>
     </footer>
     <!-- End Footer Section -->
+
+    <script src="js/shop.js"></script>
 
     <script src="js/cart.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

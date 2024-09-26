@@ -17,7 +17,7 @@ function updateCart() {
         <td>
             <button class="btn btn-danger" onclick="removeFromCart(${index})">Eliminar</button>
         </td>
-    `;
+        `;
         
         cartItems.appendChild(row);
         total += item.price * item.quantity;
@@ -29,15 +29,40 @@ function updateCart() {
 function removeFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCart();
+    updateCart(); // Actualiza la vista del carrito
+    updateCartCount(cart); // Actualiza el contador del carrito
 }
 
 function updateQuantity(index, quantity) {
     cart[index].quantity = parseInt(quantity);
     localStorage.setItem('cart', JSON.stringify(cart));
-    updateCart();
+    updateCart(); // Actualiza la vista del carrito
+    updateCartCount(cart); // Actualiza el contador del carrito
 }
 
-// Inicializa el carrito al cargar la página
-document.addEventListener('DOMContentLoaded', updateCart);
+function clearCart() {
+    cart = []; // Vacía el carrito
+    localStorage.setItem('cart', JSON.stringify(cart)); // Actualiza el almacenamiento local
+    updateCart(); // Actualiza la vista del carrito
+    updateCartCount(cart); // Actualiza el contador del carrito
+}
+
+function updateCartCount(cart) {
+    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const cartCount = document.getElementById('cart-count');
+
+    if (totalItems > 0) {
+        cartCount.style.display = 'inline'; // Mostrar el círculo
+        cartCount.textContent = totalItems; // Actualizar la cantidad
+    } else {
+        cartCount.style.display = 'none'; // Ocultar el círculo si no hay productos
+    }
+}
+
+// Llamar a la función para inicializar el contador en la carga de la página
+document.addEventListener('DOMContentLoaded', () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCart(); // Asegúrate de que se actualice la vista del carrito
+    updateCartCount(cart); // Inicializa el contador
+});
 

@@ -52,8 +52,15 @@
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+					<li style="position: relative;">
+						<a class="nav-link" href="cart.html">
+							<img src="images/cart.svg" alt="Cart" id="cart-icon">
+							<span id="cart-count" class="badge" style="display: none;">0</span>
+						</a>
+					</li>
 				</ul>
+				
+				
 			</div>
 		</div>
 
@@ -208,6 +215,7 @@
 	<!-- End Footer Section -->
 
 
+    <script src="js/shop.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
